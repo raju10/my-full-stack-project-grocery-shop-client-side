@@ -17,7 +17,7 @@ const Cart = ({ cart }) => {
     setOurOrder(pd);
   };
   ///////////////////////
-  fetch("http://localhost:4000/addOrder", {
+  fetch("https://morning-sea-22549.herokuapp.com/addOrder", {
     method: "POST",
     body: JSON.stringify(carts),
     headers: {

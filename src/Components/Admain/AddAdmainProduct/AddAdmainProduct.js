@@ -1,12 +1,16 @@
 import axios from "axios";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { MakeAddAdmainContext } from "../../../App";
-
+import { MakeAddAdmainContext, UserContext } from "../../../App";
+/////////
+import AOS from "aos";
+import "aos/dist/aos.css";
+/////////
 const AddAdmainProduct = () => {
-  const [makeAdmainEmail, setMakeAdmainEmail] = useContext(
-    MakeAddAdmainContext
-  );
+  const [loginUser, setLoginUser] = useContext(UserContext);
+  // const [makeAdmainEmail, setMakeAdmainEmail] = useContext(
+  //   MakeAddAdmainContext
+  // );
   const {
     register,
     handleSubmit,
@@ -15,18 +19,18 @@ const AddAdmainProduct = () => {
   ///////////////
   const [imgUrl, setImgUrl] = useState(null);
   const onSubmit = (data) => {
-    const newData = { ...makeAdmainEmail };
-    console.log(newData);
+    // const newData = { ...makeAdmainEmail };
+    // console.log(newData);
     const eventData = {
       catagory: data.catagory,
       image: imgUrl,
       name: data.name,
       price: data.price,
-      newData,
+      logUser: loginUser.loginUserEmail,
     };
     console.log("eventData", eventData);
     ////////////
-    fetch("http://localhost:4000/addProduct", {
+    fetch("https://morning-sea-22549.herokuapp.com/addProduct", {
       method: "POST",
       body: JSON.stringify(eventData),
       headers: {
@@ -52,8 +56,14 @@ const AddAdmainProduct = () => {
         console.log(error);
       });
   };
+  ////////////
+
+  useEffect(() => {
+    AOS.init({ duration: 3000 });
+  }, []);
+  /////////////
   return (
-    <div>
+    <div data-aos="fade-left">
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* <input defaultValue="test" {...register("example")} /> */}
 
@@ -86,7 +96,7 @@ const AddAdmainProduct = () => {
           type="file"
           {...register("image", { required: true })}
           onChange={handelImgUpload}
-          className="form-control w-25"
+          className="form-control w-50"
         />
         {errors.image && <span>Price is required</span>}
         <br />

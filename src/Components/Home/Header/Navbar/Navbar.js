@@ -43,8 +43,8 @@ const Navbar = () => {
             </li>
 
             <li class="nav-item">
-              <Link class="nav-link mr-5 text-white" to="/inventory">
-                Inventory
+              <Link class="nav-link mr-5 text-white" to="/contuctUs">
+                Contuct us
               </Link>
             </li>
 
