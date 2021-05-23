@@ -102,7 +102,7 @@ const SideNavbar = () => {
             </NavIcon>
             <NavText>
               {" "}
-              <Link to="/manageAllSarvice">Manage Sarvice</Link>
+              <Link to="/manageSarvice">Manage Sarvice</Link>
             </NavText>
           </NavItem>
           {/*  */}

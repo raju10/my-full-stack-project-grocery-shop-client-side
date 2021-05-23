@@ -65,7 +65,7 @@ const Shop = () => {
         </div>
         {/* <div className="col-md-4">
         <Cart cart={cart}></Cart>
-      </div> */}
+      </div> .....*/}
       </div>
     </div>
   );

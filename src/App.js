@@ -60,7 +60,7 @@ function App() {
               <Route path="/review">
                 <Review></Review>
               </Route>
-              <Route path="/manageAllSarvice">
+              <Route path="/manageSarvice">
                 <ManageSarvices></ManageSarvices>
               </Route>
               <Route path="/login">
