@@ -1,5 +1,8 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
+import { Link as Goto } from "react-scroll";
+import headerLogo from "../../../../images/1000px-Amazon_logo.svg.png";
 
 const Navbar = () => {
   return (
@@ -8,6 +11,7 @@ const Navbar = () => {
       style={{ background: "lightGray" }}
     >
       <div class="container-fluid">
+        <img src={headerLogo} alt="" style={{ width: "80px" }} />
         <button
           class="navbar-toggler"
           type="button"
@@ -37,15 +41,25 @@ const Navbar = () => {
             </li>
 
             <li class="nav-item">
-              <Link class="nav-link mr-5 text-white" to="/review">
+              <Goto
+                class="nav-link mr-5 text-white"
+                to="review"
+                smooth={true}
+                duration={300}
+              >
                 Review
-              </Link>
+              </Goto>
             </li>
 
             <li class="nav-item">
-              <Link class="nav-link mr-5 text-white" to="/contuctUs">
+              <Goto
+                class="nav-link mr-5 text-white"
+                to="contuctUs"
+                smooth={true}
+                duration={400}
+              >
                 Contuct us
-              </Link>
+              </Goto>
             </li>
 
             <li class="nav-item">

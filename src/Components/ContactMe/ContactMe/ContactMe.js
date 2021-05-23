@@ -28,7 +28,7 @@ const ContactMe = () => {
   }
   /////
   return (
-    <section className="contactMe-container">
+    <section className="contactMe-container" id="contuctUs">
       <div className="container">
         <div className="protfilio-header" style={{ paddingTop: "10px" }}>
           <h2>Contact me</h2>
@@ -47,7 +47,7 @@ const ContactMe = () => {
             </h3>
             <h5>Email : arifulislamraju00@gmail.com</h5>
           </div>
-          <div data-aos="fade-up" className="col-sm-6">
+          <div data-aos="fade-left" className="col-sm-6">
             <form className="contact-form" onSubmit={sendEmail}>
               <input type="hidden" name="contact_number" required />
               <label style={{ color: "#f1e9e9" }}>Name</label>
@@ -79,7 +79,7 @@ const ContactMe = () => {
                 required
               />
               <br />
-              <input type="submit" value="Send" />
+              <input type="submit" value="Send" className="buttons" />
             </form>
           </div>
         </div>

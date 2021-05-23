@@ -8,13 +8,14 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 /////////
 const Shop = () => {
+  //"https://morning-sea-22549.herokuapp.com/ourProduct?search=" + search
   const myData = fakedata;
   const [product, setProduct] = useState([]);
   const [search, setSerch] = useState("");
   const products = product.slice(0, 5);
   console.log(product);
   useEffect(() => {
-    fetch("https://morning-sea-22549.herokuapp.com/ourProduct?search=" + search)
+    fetch("https://morning-sea-22549.herokuapp.com/ourProduct")
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [search]);
@@ -32,6 +33,7 @@ const Shop = () => {
   ///////////////////
   const handelSerch = (e) => {
     setSerch(e.target.value);
+    console.log(e.target.value);
   };
   ////////////
 
@@ -52,7 +54,7 @@ const Shop = () => {
           style={{ display: "inline" }}
           onBlur={handelSerch}
         />
-        <button className="btn btn-success">search</button>
+        <button className="buttons">search</button>
       </div>
 
       <div className="row d-flex justify-content-between ">

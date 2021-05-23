@@ -1,3 +1,4 @@
+import { FcGoogle, AiFillGoogleCircle } from "react-icons/fa";
 import React, { useContext, useState } from "react";
 import firebase from "firebase/app";
 import "firebase/auth";
@@ -5,7 +6,8 @@ import firebaseConfig from "./firebase.config";
 
 import { useHistory, useLocation } from "react-router";
 import { UserContext } from "../../App";
-
+import "./Login.css";
+import google from "../../images/images.png";
 firebase.initializeApp(firebaseConfig);
 
 const Login = () => {
@@ -32,6 +34,9 @@ const Login = () => {
         };
         setLoginUser(signInUser);
         history.replace(from);
+        /////////////
+        // sessionStorage.setItem("token", signInUser);
+        ////////////
       })
       .catch((error) => {
         var errorCode = error.code;
@@ -42,12 +47,35 @@ const Login = () => {
         var credential = error.credential;
         console.log(errorCode, errorMessage);
       });
+    // const signinUserToken = () => {
+    //   firebase
+    //     .auth()
+    //     .currentUser.getIdToken(/* forceRefresh */ true)
+    //     .then(function (idToken) {
+    //       sessionStorage.setItem("token", idToken);
+    //     })
+    //     .catch(function (error) {
+    //       console.log(error);
+    //     });
+    //   //
+    // };
+    //
   };
   return (
-    <div style={{ textAlign: "center" }}>
-      <button onClick={handelGoogleSignIn} className="btn btn-success">
-        Sign in with google
-      </button>
+    <div className="d-flex justify-content-center ">
+      <div className="login-container">
+        <div className="buttonss">
+          <p style={{ fontFamily: "monospace" }}>Please Sign in</p>
+          <button onClick={handelGoogleSignIn}>
+            Continue with{" "}
+            <img
+              src={google}
+              alt=""
+              style={{ width: "30px", paddingLeft: "10px" }}
+            />
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

@@ -11,7 +11,7 @@ const Testimonial = () => {
       });
   }, []);
   return (
-    <div>
+    <div id="review">
       <div
         className="d-flex justify-content-center mt-5 container"
         style={{ padding: "50px" }}

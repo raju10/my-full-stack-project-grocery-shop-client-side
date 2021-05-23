@@ -19,6 +19,8 @@ import SideNav, {
   NavText,
 } from "@trendmicro/react-sidenav";
 
+import ManageSarvices from "./Components/ManageSarvices/ManageSarvices/ManageSarvices";
+
 //////////////
 
 export const UserContext = createContext();
@@ -57,6 +59,9 @@ function App() {
               </Route>
               <Route path="/review">
                 <Review></Review>
+              </Route>
+              <Route path="/manageAllSarvice">
+                <ManageSarvices></ManageSarvices>
               </Route>
               <Route path="/login">
                 <Login></Login>
