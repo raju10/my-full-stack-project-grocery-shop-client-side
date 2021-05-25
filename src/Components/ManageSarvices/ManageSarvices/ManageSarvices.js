@@ -4,9 +4,9 @@ import ManageSarvicesDetails from "../ManageSarvicesDetails/ManageSarvicesDetail
 
 const ManageSarvices = () => {
   const [manageAllSarvices, setManageAllSarvices] = useState([]);
-  console.log(manageAllSarvices);
+  console.log("manageAllSarvices", manageAllSarvices._id);
   useEffect(() => {
-    fetch("https://morning-sea-22549.herokuapp.com/ourProduct")
+    fetch("https://morning-sea-22549.herokuapp.com/ourProducts")
       .then((res) => res.json())
       .then((data) => {
         setManageAllSarvices(data);

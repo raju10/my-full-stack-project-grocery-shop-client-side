@@ -8,14 +8,14 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 /////////
 const Shop = () => {
-  //"https://morning-sea-22549.herokuapp.com/ourProduct?search=" + search
   const myData = fakedata;
   const [product, setProduct] = useState([]);
+  console.log(product);
   const [search, setSerch] = useState("");
   const products = product.slice(0, 5);
   console.log(product);
   useEffect(() => {
-    fetch("https://morning-sea-22549.herokuapp.com/ourProduct")
+    fetch("https://morning-sea-22549.herokuapp.com/ourProduct?search=" + search)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [search]);
@@ -58,11 +58,20 @@ const Shop = () => {
       </div>
 
       <div className="row d-flex justify-content-between ">
-        <div className="col-md-12 ">
-          {products.map((pro) => (
-            <Product pro={pro}></Product>
-          ))}
-        </div>
+        {products.length != 0 ? (
+          <div className="col-md-12 ">
+            {products.map((pro) => (
+              <Product pro={pro}></Product>
+            ))}
+          </div>
+        ) : (
+          <h4
+            style={{ textAlign: "center", color: "red", padding: "100px 0px" }}
+          >
+            Sorry There Is no Product In out Store <br /> please search with
+            another product
+          </h4>
+        )}
         {/* <div className="col-md-4">
         <Cart cart={cart}></Cart>
       </div> .....*/}

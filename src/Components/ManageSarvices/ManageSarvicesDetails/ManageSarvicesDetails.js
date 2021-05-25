@@ -4,8 +4,8 @@ const ManageSarvicesDetails = ({ manageAllSarvices }) => {
   console.log(manageAllSarvices);
   const hendelPrdDeleted = (id) => {
     console.log("pd", id);
-    if (id) {
-      fetch(`/delete/${id}`, {
+    if (window.confirm("r u shure")) {
+      fetch("https://morning-sea-22549.herokuapp.com/delete/" + id, {
         method: "DELETE",
         headers: {
           "Content-type": "application/json; charset=UTF-8",

@@ -26,6 +26,7 @@ const YourSelcOrder = () => {
       ...loginUser,
       ...orderData,
       paymentId,
+      date: new Date().toDateString(),
     };
     console.log("datas", datas);
 

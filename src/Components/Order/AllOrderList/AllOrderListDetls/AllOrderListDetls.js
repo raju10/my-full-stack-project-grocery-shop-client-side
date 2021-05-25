@@ -9,6 +9,9 @@ const AllOrderListDetls = ({ allOrderList }) => {
             Sr No
           </th>
           <th className="text-secondary" scope="col">
+            Date
+          </th>
+          <th className="text-secondary" scope="col">
             Name
           </th>
 
@@ -31,6 +34,7 @@ const AllOrderListDetls = ({ allOrderList }) => {
         {allOrderList.map((order, index) => (
           <tr>
             <td>{index + 1}</td>
+            <td>{order.date}</td>
             <td>{order.loginUserName}</td>
 
             <td>{order.orderName}</td>
